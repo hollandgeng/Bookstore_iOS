@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		54FCF8D62A9C49F0004CD2FE /* BookstoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FCF8D52A9C49F0004CD2FE /* BookstoreApp.swift */; };
+		54FCF8D82A9C49F0004CD2FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FCF8D72A9C49F0004CD2FE /* ContentView.swift */; };
+		54FCF8DA2A9C49F1004CD2FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54FCF8D92A9C49F1004CD2FE /* Assets.xcassets */; };
+		54FCF8DD2A9C49F1004CD2FE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54FCF8DC2A9C49F1004CD2FE /* Preview Assets.xcassets */; };
+		54FCF8E72A9C49F1004CD2FE /* BookstoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FCF8E62A9C49F1004CD2FE /* BookstoreTests.swift */; };
+		54FCF8F12A9C49F1004CD2FE /* BookstoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FCF8F02A9C49F1004CD2FE /* BookstoreUITests.swift */; };
+		54FCF8F32A9C49F1004CD2FE /* BookstoreUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FCF8F22A9C49F1004CD2FE /* BookstoreUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		54FCF8E32A9C49F1004CD2FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 54FCF8CA2A9C49F0004CD2FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 54FCF8D12A9C49F0004CD2FE;
+			remoteInfo = Bookstore;
+		};
+		54FCF8ED2A9C49F1004CD2FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 54FCF8CA2A9C49F0004CD2FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 54FCF8D12A9C49F0004CD2FE;
+			remoteInfo = Bookstore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		54FCF8D22A9C49F0004CD2FE /* Bookstore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookstore.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		54FCF8D52A9C49F0004CD2FE /* BookstoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookstoreApp.swift; sourceTree = "<group>"; };
+		54FCF8D72A9C49F0004CD2FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		54FCF8D92A9C49F1004CD2FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		54FCF8DC2A9C49F1004CD2FE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		54FCF8E22A9C49F1004CD2FE /* BookstoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookstoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		54FCF8E62A9C49F1004CD2FE /* BookstoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookstoreTests.swift; sourceTree = "<group>"; };
+		54FCF8EC2A9C49F1004CD2FE /* BookstoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookstoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		54FCF8F02A9C49F1004CD2FE /* BookstoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookstoreUITests.swift; sourceTree = "<group>"; };
+		54FCF8F22A9C49F1004CD2FE /* BookstoreUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookstoreUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		54FCF8CF2A9C49F0004CD2FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54FCF8DF2A9C49F1004CD2FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54FCF8E92A9C49F1004CD2FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		54FCF8C92A9C49F0004CD2FE = {
+			isa = PBXGroup;
+			children = (
+				54FCF8D42A9C49F0004CD2FE /* Bookstore */,
+				54FCF8E52A9C49F1004CD2FE /* BookstoreTests */,
+				54FCF8EF2A9C49F1004CD2FE /* BookstoreUITests */,
+				54FCF8D32A9C49F0004CD2FE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		54FCF8D32A9C49F0004CD2FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				54FCF8D22A9C49F0004CD2FE /* Bookstore.app */,
+				54FCF8E22A9C49F1004CD2FE /* BookstoreTests.xctest */,
+				54FCF8EC2A9C49F1004CD2FE /* BookstoreUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		54FCF8D42A9C49F0004CD2FE /* Bookstore */ = {
+			isa = PBXGroup;
+			children = (
+				54FCF8D52A9C49F0004CD2FE /* BookstoreApp.swift */,
+				54FCF8D72A9C49F0004CD2FE /* ContentView.swift */,
+				54FCF8D92A9C49F1004CD2FE /* Assets.xcassets */,
+				54FCF8DB2A9C49F1004CD2FE /* Preview Content */,
+			);
+			path = Bookstore;
+			sourceTree = "<group>";
+		};
+		54FCF8DB2A9C49F1004CD2FE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				54FCF8DC2A9C49F1004CD2FE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		54FCF8E52A9C49F1004CD2FE /* BookstoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				54FCF8E62A9C49F1004CD2FE /* BookstoreTests.swift */,
+			);
+			path = BookstoreTests;
+			sourceTree = "<group>";
+		};
+		54FCF8EF2A9C49F1004CD2FE /* BookstoreUITests */ = {
+			isa = PBXGroup;
+			children = (
+				54FCF8F02A9C49F1004CD2FE /* BookstoreUITests.swift */,
+				54FCF8F22A9C49F1004CD2FE /* BookstoreUITestsLaunchTests.swift */,
+			);
+			path = BookstoreUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		54FCF8D12A9C49F0004CD2FE /* Bookstore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54FCF8F62A9C49F1004CD2FE /* Build configuration list for PBXNativeTarget "Bookstore" */;
+			buildPhases = (
+				54FCF8CE2A9C49F0004CD2FE /* Sources */,
+				54FCF8CF2A9C49F0004CD2FE /* Frameworks */,
+				54FCF8D02A9C49F0004CD2FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bookstore;
+			productName = Bookstore;
+			productReference = 54FCF8D22A9C49F0004CD2FE /* Bookstore.app */;
+			productType = "com.apple.product-type.application";
+		};
+		54FCF8E12A9C49F1004CD2FE /* BookstoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54FCF8F92A9C49F1004CD2FE /* Build configuration list for PBXNativeTarget "BookstoreTests" */;
+			buildPhases = (
+				54FCF8DE2A9C49F1004CD2FE /* Sources */,
+				54FCF8DF2A9C49F1004CD2FE /* Frameworks */,
+				54FCF8E02A9C49F1004CD2FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				54FCF8E42A9C49F1004CD2FE /* PBXTargetDependency */,
+			);
+			name = BookstoreTests;
+			productName = BookstoreTests;
+			productReference = 54FCF8E22A9C49F1004CD2FE /* BookstoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		54FCF8EB2A9C49F1004CD2FE /* BookstoreUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54FCF8FC2A9C49F1004CD2FE /* Build configuration list for PBXNativeTarget "BookstoreUITests" */;
+			buildPhases = (
+				54FCF8E82A9C49F1004CD2FE /* Sources */,
+				54FCF8E92A9C49F1004CD2FE /* Frameworks */,
+				54FCF8EA2A9C49F1004CD2FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				54FCF8EE2A9C49F1004CD2FE /* PBXTargetDependency */,
+			);
+			name = BookstoreUITests;
+			productName = BookstoreUITests;
+			productReference = 54FCF8EC2A9C49F1004CD2FE /* BookstoreUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		54FCF8CA2A9C49F0004CD2FE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					54FCF8D12A9C49F0004CD2FE = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					54FCF8E12A9C49F1004CD2FE = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 54FCF8D12A9C49F0004CD2FE;
+					};
+					54FCF8EB2A9C49F1004CD2FE = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 54FCF8D12A9C49F0004CD2FE;
+					};
+				};
+			};
+			buildConfigurationList = 54FCF8CD2A9C49F0004CD2FE /* Build configuration list for PBXProject "Bookstore" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 54FCF8C92A9C49F0004CD2FE;
+			productRefGroup = 54FCF8D32A9C49F0004CD2FE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				54FCF8D12A9C49F0004CD2FE /* Bookstore */,
+				54FCF8E12A9C49F1004CD2FE /* BookstoreTests */,
+				54FCF8EB2A9C49F1004CD2FE /* BookstoreUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		54FCF8D02A9C49F0004CD2FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54FCF8DD2A9C49F1004CD2FE /* Preview Assets.xcassets in Resources */,
+				54FCF8DA2A9C49F1004CD2FE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54FCF8E02A9C49F1004CD2FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54FCF8EA2A9C49F1004CD2FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		54FCF8CE2A9C49F0004CD2FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54FCF8D82A9C49F0004CD2FE /* ContentView.swift in Sources */,
+				54FCF8D62A9C49F0004CD2FE /* BookstoreApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54FCF8DE2A9C49F1004CD2FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54FCF8E72A9C49F1004CD2FE /* BookstoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54FCF8E82A9C49F1004CD2FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54FCF8F12A9C49F1004CD2FE /* BookstoreUITests.swift in Sources */,
+				54FCF8F32A9C49F1004CD2FE /* BookstoreUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		54FCF8E42A9C49F1004CD2FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 54FCF8D12A9C49F0004CD2FE /* Bookstore */;
+			targetProxy = 54FCF8E32A9C49F1004CD2FE /* PBXContainerItemProxy */;
+		};
+		54FCF8EE2A9C49F1004CD2FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 54FCF8D12A9C49F0004CD2FE /* Bookstore */;
+			targetProxy = 54FCF8ED2A9C49F1004CD2FE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		54FCF8F42A9C49F1004CD2FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		54FCF8F52A9C49F1004CD2FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		54FCF8F72A9C49F1004CD2FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Bookstore/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = softspace.Bookstore;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		54FCF8F82A9C49F1004CD2FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Bookstore/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = softspace.Bookstore;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		54FCF8FA2A9C49F1004CD2FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = softspace.BookstoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bookstore.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Bookstore";
+			};
+			name = Debug;
+		};
+		54FCF8FB2A9C49F1004CD2FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = softspace.BookstoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bookstore.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Bookstore";
+			};
+			name = Release;
+		};
+		54FCF8FD2A9C49F1004CD2FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = softspace.BookstoreUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Bookstore;
+			};
+			name = Debug;
+		};
+		54FCF8FE2A9C49F1004CD2FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = softspace.BookstoreUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Bookstore;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		54FCF8CD2A9C49F0004CD2FE /* Build configuration list for PBXProject "Bookstore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54FCF8F42A9C49F1004CD2FE /* Debug */,
+				54FCF8F52A9C49F1004CD2FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		54FCF8F62A9C49F1004CD2FE /* Build configuration list for PBXNativeTarget "Bookstore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54FCF8F72A9C49F1004CD2FE /* Debug */,
+				54FCF8F82A9C49F1004CD2FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		54FCF8F92A9C49F1004CD2FE /* Build configuration list for PBXNativeTarget "BookstoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54FCF8FA2A9C49F1004CD2FE /* Debug */,
+				54FCF8FB2A9C49F1004CD2FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		54FCF8FC2A9C49F1004CD2FE /* Build configuration list for PBXNativeTarget "BookstoreUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54FCF8FD2A9C49F1004CD2FE /* Debug */,
+				54FCF8FE2A9C49F1004CD2FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 54FCF8CA2A9C49F0004CD2FE /* Project object */;
+}
