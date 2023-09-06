@@ -6,3 +6,6 @@
 //
 
 import Foundation
+
+var userProfile = ["SS" : "11111"]
+

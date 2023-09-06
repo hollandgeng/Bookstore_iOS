@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct BookstoreApp: App {
+    @StateObject var userStateViewModel = UserStateViewModel()
+    
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        WindowGroup
+        {
+            HomeView()
+            .environmentObject(userStateViewModel)
         }
     }
 }
+
+
