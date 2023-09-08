@@ -16,16 +16,6 @@ struct BooklistView: View {
         NavigationStack
         {
             BookList(viewmodel: viewmodel)
-                .onAppear(perform: {
-                    if(DependencyContainer.instance.hasUpdate)
-                    {
-                        viewmodel.getBook()
-                        DependencyContainer.instance.SetChangesFlag(hasChanged: false)
-                    }
-                })
-                .refreshable(action: {
-                    viewmodel.getBook()
-                })
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationTitle("Booklist")
                 .toolbar(content: {
@@ -62,6 +52,8 @@ struct BookList : View
     
     @ObservedObject var viewmodel = BooklistViewModel()
     
+    @State var refreshing = false
+    
     var body: some View
     {
         NavigationStack
@@ -76,7 +68,7 @@ struct BookList : View
                         {
                             BookInfoView(viewmodel:BookInfoViewModel(book:_book))
                         }label: {
-                            BookRow(book: _book)
+                            BookRow(book: _book, isRefreshing: $refreshing)
                                 .swipeActions(edge: .trailing,
                                               allowsFullSwipe: false){
                                     Button(role:.destructive)
@@ -91,6 +83,19 @@ struct BookList : View
                     }
                     
                 }
+            }
+            .onAppear
+            {
+                if(DependencyContainer.instance.hasUpdate)
+                {
+                    viewmodel.getBook()
+                    DependencyContainer.instance.SetChangesFlag(hasChanged: false)
+                    refreshing = true
+                }
+            }
+            .refreshable {
+                viewmodel.getBook()
+                refreshing = true
             }.confirmationDialog("Delete",
                                  isPresented: $alert,
                                  presenting: currentBook,
@@ -120,6 +125,7 @@ struct BookRow : View
     var book : Book
     
     @State private var imageData : Data?
+    @Binding var isRefreshing : Bool
     
     func loadImageData()
     {
@@ -129,12 +135,12 @@ struct BookRow : View
         }
         
         let _url = NSURL(string: book.image)?.path
-        
+
         if(FileManager.default.fileExists(atPath:_url!))
         {
             let url = URL(string:book.image)
             
-            if let data = try? Data(contentsOf: url!)
+            if let data = try? Data(contentsOf:url! )
             {
                 imageData = data
             }
@@ -160,7 +166,7 @@ struct BookRow : View
             }
             else
             {
-                Image(systemName: "book")
+                Image(systemName: "swift")
                     .scaledToFit()
                     .frame(width: 30, height: 30)
                     .overlay(Circle().stroke(Color.black, lineWidth:2))
@@ -170,7 +176,7 @@ struct BookRow : View
             VStack(alignment: .leading)
             {
                 Text(book.title)
-                    .lineLimit(2)
+                    .lineLimit(4)
                     .multilineTextAlignment(.leading)
                     .font(.system(size:14))
                 Text(book.author)
@@ -184,20 +190,35 @@ struct BookRow : View
             Spacer()
             Text(book.creationDate, style: .date)
                 .font(.system(size: 10))
-        }.onAppear{
+        }
+        .onAppear
+        {
             loadImageData()
         }
+        .onChange(of: isRefreshing)
+        {
+            refresh in
+            if(refresh)
+            {
+                let test = book.image
+                loadImageData()
+                isRefreshing = false
+            }
+        }
+        .onChange(of: book.image)
+        {
+            image in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5)
+            {
+                loadImageData()
+            }
+            
+        }
+        
     }
     
 }
 
-struct RowPreview : PreviewProvider
-{
-    static var previews: some View
-    {
-        BookRow(book: Mock_Book[0])
-    }
-}
 
 struct BooklistView_Previews: PreviewProvider {
     static var previews: some View {

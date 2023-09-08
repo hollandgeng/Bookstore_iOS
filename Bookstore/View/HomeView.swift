@@ -17,7 +17,13 @@ struct HomeView: View {
         }
         else
         {
-            LoginView()
+            NavigationStack
+            {
+                LoginView()
+                    .navigationTitle("Book Store")
+                    .navigationBarTitleDisplayMode(.inline)
+            }
+            
         }
             
     }

@@ -13,6 +13,8 @@
 		54C3E04C2AA7256F00AEB64F /* KeyboardDismissEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3E04B2AA7256F00AEB64F /* KeyboardDismissEffect.swift */; };
 		54C3E04E2AA7394800AEB64F /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3E04D2AA7394800AEB64F /* UserData.swift */; };
 		54C3E0512AA855D500AEB64F /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3E0502AA855D500AEB64F /* LoginResponse.swift */; };
+		54C3E0532AA878A700AEB64F /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3E0522AA878A700AEB64F /* Notification.swift */; };
+		54C3E0552AA878FE00AEB64F /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3E0542AA878FE00AEB64F /* NotificationView.swift */; };
 		54FCF8D62A9C49F0004CD2FE /* BookstoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FCF8D52A9C49F0004CD2FE /* BookstoreApp.swift */; };
 		54FCF8D82A9C49F0004CD2FE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FCF8D72A9C49F0004CD2FE /* LoginView.swift */; };
 		54FCF8DA2A9C49F1004CD2FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54FCF8D92A9C49F1004CD2FE /* Assets.xcassets */; };
@@ -61,6 +63,8 @@
 		54C3E04B2AA7256F00AEB64F /* KeyboardDismissEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissEffect.swift; sourceTree = "<group>"; };
 		54C3E04D2AA7394800AEB64F /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		54C3E0502AA855D500AEB64F /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		54C3E0522AA878A700AEB64F /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		54C3E0542AA878FE00AEB64F /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		54FCF8D22A9C49F0004CD2FE /* Bookstore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookstore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54FCF8D52A9C49F0004CD2FE /* BookstoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookstoreApp.swift; sourceTree = "<group>"; };
 		54FCF8D72A9C49F0004CD2FE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 				54FCF9052A9C76CB004CD2FE /* HomeView.swift */,
 				54FCF9092A9C8FB1004CD2FE /* BookInfoView.swift */,
 				54FCF91A2AA580BC004CD2FE /* CameraView.swift */,
+				54C3E0542AA878FE00AEB64F /* NotificationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 				54FCF90C2A9C904E004CD2FE /* Book.swift */,
 				54C3E0462AA5C78000AEB64F /* BookModel.xcdatamodeld */,
 				54C3E04D2AA7394800AEB64F /* UserData.swift */,
+				54C3E0522AA878A700AEB64F /* Notification.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -401,6 +407,7 @@
 				54FCF8D82A9C49F0004CD2FE /* LoginView.swift in Sources */,
 				54FCF9122A9DD568004CD2FE /* BookRepository.swift in Sources */,
 				54FCF9192A9E1906004CD2FE /* BooklistViewModel.swift in Sources */,
+				54C3E0552AA878FE00AEB64F /* NotificationView.swift in Sources */,
 				54FCF8D62A9C49F0004CD2FE /* BookstoreApp.swift in Sources */,
 				54FCF90F2A9DD532004CD2FE /* BookInfoViewModel.swift in Sources */,
 				54FCF9012A9C5352004CD2FE /* LoginViewModel.swift in Sources */,
@@ -412,6 +419,7 @@
 				54C3E04E2AA7394800AEB64F /* UserData.swift in Sources */,
 				54FCF9152A9DD5D3004CD2FE /* IBookRepository.swift in Sources */,
 				54C3E04C2AA7256F00AEB64F /* KeyboardDismissEffect.swift in Sources */,
+				54C3E0532AA878A700AEB64F /* Notification.swift in Sources */,
 				54C3E04A2AA6F8DD00AEB64F /* CustomPhotoPicker.swift in Sources */,
 				54FCF9172A9DDEC7004CD2FE /* DependencyContainer.swift in Sources */,
 				54FCF90A2A9C8FB1004CD2FE /* BookInfoView.swift in Sources */,

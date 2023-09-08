@@ -23,7 +23,11 @@ struct BookInfoView: View {
             ScrollView
             {
                 BookInfo(book: $viewmodel.currentBook,
-                         currentViewState: $viewmodel.currentState)
+                         currentViewState: $viewmodel.currentState,
+                onPhotoChanged: {
+                    imageData in
+                    viewmodel.SetTempImageData(data: imageData)
+                })
                 .navigationTitle("Book")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar(content: {
@@ -65,17 +69,15 @@ struct BookInfo : View {
     @Binding var book : Book
     @Binding var currentViewState : BookViewState
     
-    //temp not using
-    @State private var selectedImage : PhotosPickerItem? = nil
-    @State private var selectedImageData : Data? = nil
-    
     @State private var currentImage : UIImage?
     
     @State private var showImageAction : Bool = false
     
     @State private var customImagePicker : Bool = false
-    @State private var showImagePicker : Bool = false
+
     @State private var showCamera : Bool = false
+    
+    var onPhotoChanged : (Data?) -> Void = {data in return}
     
     func loadImageData()
     {
@@ -176,15 +178,16 @@ struct BookInfo : View {
         }
         .onChange(of: currentImage, perform: {
             image in
-            if(image == nil) { return }
-            
-            let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-            
-            let cacheFile = dir.appendingPathComponent("bookimage_\(book.id.uuidString).png")
-            
-            try? image?.pngData()!.write(to: cacheFile)
-            
-            book.image = cacheFile.absoluteString
+            onPhotoChanged(image?.jpegData(compressionQuality: 0.5))
+//            if(image == nil) { return }
+//
+//            let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+//
+//            let cacheFile = dir.appendingPathComponent("bookimage_\(book.id.uuidString).png")
+//
+//            try? image?.jpegData(compressionQuality: 0.5)!.write(to: cacheFile)
+//
+//            book.image = cacheFile.absoluteString
         })
         
     }
