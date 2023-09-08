@@ -57,14 +57,7 @@ class BookInfoViewModel : ObservableObject
     func UpdateBook()
     {
         OverwritePhoto()
-        bookRepo.UpdateBook(book:currentBook)
-        //give a small buffer period to create the image file before notifying changes to UI
-        //prevent file not found exception from BookList
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0)
-//        {
-//            self.bookRepo.UpdateBook(book:self.currentBook)
-//        }
-        
+        bookRepo.UpdateBook(book:currentBook)        
     }
     
     
@@ -94,9 +87,6 @@ class BookInfoViewModel : ObservableObject
     {
         if(imageData == nil) {return}
         
-        //let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        //let cacheFile = dir.appendingPathComponent("\(currentBook.id.uuidString)_\(GetDatetimeString()).jpeg")
-        
         let filename = "\(currentBook.id.uuidString)_\(GetDatetimeString()).jpeg";
         let filepath = GetImagePath(filename: filename)
       
@@ -118,9 +108,6 @@ class BookInfoViewModel : ObservableObject
     {
         if(imageData == nil) {return}
         
-        //let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        //let cacheFile = dir.appendingPathComponent("\(currentBook.id.uuidString)_\(GetDatetimeString()).jpeg")
-
         let filename = "\(currentBook.id.uuidString)_\(GetDatetimeString()).jpeg";
         let filepath = GetImagePath(filename: filename)
       
@@ -133,7 +120,6 @@ class BookInfoViewModel : ObservableObject
     
     private func DeleteOldPhoto(filename:String)
     {
-        //let _url = NSURL(string: path)?.path
         let filepath = GetImagePath(filename: filename).path()
         
         do
