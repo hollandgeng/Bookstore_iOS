@@ -127,18 +127,19 @@ struct BookRow : View
     @State private var imageData : Data?
     @Binding var isRefreshing : Bool
     
-    func loadImageData()
+    func loadImageData(path:String)
     {
-        if(book.image.isEmpty)
-        {
-            return
-        }
+        if(path.isEmpty) {return}
+//        if(book.image.isEmpty)
+//        {
+//            return
+//        }
         
-        let _url = NSURL(string: book.image)?.path
+        let _url = NSURL(string: path)?.path
 
         if(FileManager.default.fileExists(atPath:_url!))
         {
-            let url = URL(string:book.image)
+            let url = URL(string:path)
             
             if let data = try? Data(contentsOf:url! )
             {
@@ -193,25 +194,22 @@ struct BookRow : View
         }
         .onAppear
         {
-            loadImageData()
+            loadImageData(path:book.image)
         }
         .onChange(of: isRefreshing)
         {
             refresh in
             if(refresh)
             {
-                let test = book.image
-                loadImageData()
+                loadImageData(path:book.image)
                 isRefreshing = false
             }
         }
         .onChange(of: book.image)
         {
             image in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5)
-            {
-                loadImageData()
-            }
+            loadImageData(path:image)
+            
             
         }
         
