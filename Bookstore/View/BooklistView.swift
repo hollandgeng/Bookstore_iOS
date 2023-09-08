@@ -90,7 +90,7 @@ struct BookList : View
                 {
                     viewmodel.getBook()
                     DependencyContainer.instance.SetChangesFlag(hasChanged: false)
-                    refreshing = true
+                    //refreshing = true
                 }
             }
             .refreshable {
@@ -125,6 +125,7 @@ struct BookRow : View
     var book : Book
     
     @State private var imageData : Data?
+    @State private var hasInit = false
     @Binding var isRefreshing : Bool
     
     //pass parameter here because to make sure data is always up-to-date
@@ -132,18 +133,12 @@ struct BookRow : View
     func loadImageData(filename:String)
     {
         if(filename.isEmpty) {return}
-        //        if(book.image.isEmpty)
-        //        {
-        //            return
-        //        }
-        
-        //let _url = NSURL(string: path)?.path
+
         let filepath = GetImagePath(filename: filename)
         
         if(FileManager.default.fileExists(atPath:filepath.path()))
         {
-            //let url = URL(string:path)
-            
+
             if let data = try? Data(contentsOf:filepath )
             {
                 imageData = data
@@ -197,7 +192,14 @@ struct BookRow : View
         }
         .onAppear
         {
-            loadImageData(filename:book.image)
+            //make sure appearing load only happen once
+            //prevent image load on navigating back and forth
+            //new image load will be called on data changed or refresh
+            if(!hasInit)
+            {
+                loadImageData(filename:book.image)
+                hasInit = true
+            }
         }
         .onChange(of: isRefreshing)
         {
@@ -212,11 +214,8 @@ struct BookRow : View
         {
             image in
             loadImageData(filename:image)
-            
         }
-        
     }
-    
 }
 
 
