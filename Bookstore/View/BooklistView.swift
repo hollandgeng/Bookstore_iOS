@@ -12,7 +12,7 @@ struct BooklistView: View {
     
     @ObservedObject var viewmodel = BooklistViewModel()
     
-        var body: some View {
+    var body: some View {
         NavigationStack
         {
             BookList(viewmodel: viewmodel)
@@ -72,13 +72,13 @@ struct BookList : View
                                 .swipeActions(edge: .trailing,
                                               allowsFullSwipe: false){
                                     Button(role:.destructive)
-                                {
-                                    currentBook = _book
-                                    alert = true
-                                }label: {
-                                    Label("Delete", systemImage: "trash")
+                                    {
+                                        currentBook = _book
+                                        alert = true
+                                    }label: {
+                                        Label("Delete", systemImage: "trash")
+                                    }
                                 }
-                            }
                         }
                     }
                     
@@ -100,21 +100,21 @@ struct BookList : View
                                  isPresented: $alert,
                                  presenting: currentBook,
                                  actions:{
-                 book in
-                 Button(role:.destructive)
-                 {
-                     withAnimation{
-                         viewmodel.DeleteBook(book: currentBook!)
-                         viewmodel.getBook()
-                     }
-                     
-                 }label: {
-                     Text("Delete")
-                 }
-             },message:{
-                 book in
-                 Text("Sure?")
-             })
+                book in
+                Button(role:.destructive)
+                {
+                    withAnimation{
+                        viewmodel.DeleteBook(book: currentBook!)
+                        viewmodel.getBook()
+                    }
+                    
+                }label: {
+                    Text("Delete")
+                }
+            },message:{
+                book in
+                Text("Are You Sure You Want to Delete This Book?")
+            })
         }
         
     }
@@ -127,21 +127,24 @@ struct BookRow : View
     @State private var imageData : Data?
     @Binding var isRefreshing : Bool
     
-    func loadImageData(path:String)
+    //pass parameter here because to make sure data is always up-to-date
+    //prevent image error due to race condition
+    func loadImageData(filename:String)
     {
-        if(path.isEmpty) {return}
-//        if(book.image.isEmpty)
-//        {
-//            return
-//        }
+        if(filename.isEmpty) {return}
+        //        if(book.image.isEmpty)
+        //        {
+        //            return
+        //        }
         
-        let _url = NSURL(string: path)?.path
-
-        if(FileManager.default.fileExists(atPath:_url!))
+        //let _url = NSURL(string: path)?.path
+        let filepath = GetImagePath(filename: filename)
+        
+        if(FileManager.default.fileExists(atPath:filepath.path()))
         {
-            let url = URL(string:path)
+            //let url = URL(string:path)
             
-            if let data = try? Data(contentsOf:url! )
+            if let data = try? Data(contentsOf:filepath )
             {
                 imageData = data
             }
@@ -194,22 +197,21 @@ struct BookRow : View
         }
         .onAppear
         {
-            loadImageData(path:book.image)
+            loadImageData(filename:book.image)
         }
         .onChange(of: isRefreshing)
         {
             refresh in
             if(refresh)
             {
-                loadImageData(path:book.image)
+                loadImageData(filename:book.image)
                 isRefreshing = false
             }
         }
         .onChange(of: book.image)
         {
             image in
-            loadImageData(path:image)
-            
+            loadImageData(filename:image)
             
         }
         
@@ -220,8 +222,8 @@ struct BookRow : View
 
 struct BooklistView_Previews: PreviewProvider {
     static var previews: some View {
-
+        
         BooklistView().environmentObject(UserStateViewModel())
-
+        
     }
 }

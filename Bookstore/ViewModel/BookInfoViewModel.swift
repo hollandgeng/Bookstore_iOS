@@ -94,44 +94,53 @@ class BookInfoViewModel : ObservableObject
     {
         if(imageData == nil) {return}
         
-        let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        //let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        //let cacheFile = dir.appendingPathComponent("\(currentBook.id.uuidString)_\(GetDatetimeString()).jpeg")
         
-        let cacheFile = dir.appendingPathComponent("\(currentBook.id.uuidString)_\(GetDatetimeString()).jpeg")
-        print(cacheFile)
-        try? imageData!.write(to: cacheFile)
+        let filename = "\(currentBook.id.uuidString)_\(GetDatetimeString()).jpeg";
+        let filepath = GetImagePath(filename: filename)
+      
+        try? imageData!.write(to: filepath)
         
-        let oldImagePath = currentBook.image
+        let oldImageFile = currentBook.image
         
         Task
         {
-            DeleteOldPhoto(path: oldImagePath)
+            DeleteOldPhoto(filename: oldImageFile)
         }
         
-        currentBook.image = cacheFile.absoluteString
+        currentBook.image = filename
+        
+        imageData = nil
     }
     
     private func AddNewPhoto()
     {
         if(imageData == nil) {return}
         
-        let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        //let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        //let cacheFile = dir.appendingPathComponent("\(currentBook.id.uuidString)_\(GetDatetimeString()).jpeg")
+
+        let filename = "\(currentBook.id.uuidString)_\(GetDatetimeString()).jpeg";
+        let filepath = GetImagePath(filename: filename)
+      
+        try? imageData!.write(to: filepath)
         
-        let cacheFile = dir.appendingPathComponent("\(currentBook.id.uuidString)_\(GetDatetimeString()).jpeg")
-        print(cacheFile)
-        try? imageData!.write(to: cacheFile)
+        currentBook.image = filename
         
-        currentBook.image = cacheFile.absoluteString
+        imageData = nil
     }
     
-    private func DeleteOldPhoto(path:String)
+    private func DeleteOldPhoto(filename:String)
     {
-        let _url = NSURL(string: path)?.path
+        //let _url = NSURL(string: path)?.path
+        let filepath = GetImagePath(filename: filename).path()
         
         do
         {
-            if(FileManager.default.fileExists(atPath: _url!))
+            if(FileManager.default.fileExists(atPath: filepath))
             {
-                try FileManager.default.removeItem(atPath: _url!)
+                try FileManager.default.removeItem(atPath: filepath)
                 print("Deleted")
             }
         }

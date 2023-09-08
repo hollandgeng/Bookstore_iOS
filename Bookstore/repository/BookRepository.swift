@@ -136,19 +136,21 @@ class BookRepository : IBookRepository
         
         Task
         {
-            DeleteBookImage(path:book.image)
+            DeleteBookImage(filename:book.image)
         }
     }
     
-    private func DeleteBookImage(path : String)
+    private func DeleteBookImage(filename : String)
     {
         let fileManager = FileManager.default
+        let filepath = GetImagePath(filename: filename).path()
         
         do
         {
-            if(fileManager.fileExists(atPath: path))
+            if(fileManager.fileExists(atPath: filepath))
             {
-                try fileManager.removeItem(atPath: path)
+                try fileManager.removeItem(atPath: filepath)
+                print("Deleted \(filename)")
             }
         }
         catch

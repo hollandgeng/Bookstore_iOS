@@ -79,6 +79,9 @@ struct BookInfo : View {
     
     var onPhotoChanged : (Data?) -> Void = {data in return}
     
+    //not passing parameter because book data only pass in once by @Binding
+    //no need to worry on update race condition
+    //hence it can just grab data from book state
     func loadImageData()
     {
         if(book.image.isEmpty)
@@ -86,13 +89,14 @@ struct BookInfo : View {
             return
         }
         
-        let _url = NSURL(string: book.image)?.path
+        //let _url = NSURL(string: book.image)?.path
+        let filepath = GetImagePath(filename: book.image)
         
-        if(FileManager.default.fileExists(atPath:_url!))
+        if(FileManager.default.fileExists(atPath:filepath.path()))
         {
-            let url = URL(string:book.image)
+            //let url = URL(string:book.image)
             
-            if let data = try? Data(contentsOf: url!)
+            if let data = try? Data(contentsOf: filepath)
             {
                 currentImage = UIImage(data: data)
             }
@@ -177,19 +181,9 @@ struct BookInfo : View {
             CustomPhotoPicker(selectedImage: $currentImage)
         }
         .onChange(of: currentImage, perform: {
-            image in
-            onPhotoChanged(image?.jpegData(compressionQuality: 0.5))
-//            if(image == nil) { return }
-//
-//            let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-//
-//            let cacheFile = dir.appendingPathComponent("bookimage_\(book.id.uuidString).png")
-//
-//            try? image?.jpegData(compressionQuality: 0.5)!.write(to: cacheFile)
-//
-//            book.image = cacheFile.absoluteString
+            newImage in
+            onPhotoChanged(newImage?.jpegData(compressionQuality: 0.5))
         })
-        
     }
 }
 

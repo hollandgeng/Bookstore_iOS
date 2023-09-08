@@ -15,6 +15,7 @@
 		54C3E0512AA855D500AEB64F /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3E0502AA855D500AEB64F /* LoginResponse.swift */; };
 		54C3E0532AA878A700AEB64F /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3E0522AA878A700AEB64F /* Notification.swift */; };
 		54C3E0552AA878FE00AEB64F /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3E0542AA878FE00AEB64F /* NotificationView.swift */; };
+		54C3E0582AAAF98000AEB64F /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3E0572AAAF98000AEB64F /* ImageHelper.swift */; };
 		54FCF8D62A9C49F0004CD2FE /* BookstoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FCF8D52A9C49F0004CD2FE /* BookstoreApp.swift */; };
 		54FCF8D82A9C49F0004CD2FE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FCF8D72A9C49F0004CD2FE /* LoginView.swift */; };
 		54FCF8DA2A9C49F1004CD2FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54FCF8D92A9C49F1004CD2FE /* Assets.xcassets */; };
@@ -65,6 +66,7 @@
 		54C3E0502AA855D500AEB64F /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		54C3E0522AA878A700AEB64F /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		54C3E0542AA878FE00AEB64F /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		54C3E0572AAAF98000AEB64F /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		54FCF8D22A9C49F0004CD2FE /* Bookstore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookstore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54FCF8D52A9C49F0004CD2FE /* BookstoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookstoreApp.swift; sourceTree = "<group>"; };
 		54FCF8D72A9C49F0004CD2FE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -133,6 +135,14 @@
 			path = responses;
 			sourceTree = "<group>";
 		};
+		54C3E0562AAAF97000AEB64F /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				54C3E0572AAAF98000AEB64F /* ImageHelper.swift */,
+			);
+			path = helper;
+			sourceTree = "<group>";
+		};
 		54FCF8C92A9C49F0004CD2FE = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +166,7 @@
 		54FCF8D42A9C49F0004CD2FE /* Bookstore */ = {
 			isa = PBXGroup;
 			children = (
+				54C3E0562AAAF97000AEB64F /* helper */,
 				54C3E04F2AA855C900AEB64F /* responses */,
 				54C3E0432AA5C6E700AEB64F /* database */,
 				54FCF91F2AA5B257004CD2FE /* extension */,
@@ -419,6 +430,7 @@
 				54C3E04E2AA7394800AEB64F /* UserData.swift in Sources */,
 				54FCF9152A9DD5D3004CD2FE /* IBookRepository.swift in Sources */,
 				54C3E04C2AA7256F00AEB64F /* KeyboardDismissEffect.swift in Sources */,
+				54C3E0582AAAF98000AEB64F /* ImageHelper.swift in Sources */,
 				54C3E0532AA878A700AEB64F /* Notification.swift in Sources */,
 				54C3E04A2AA6F8DD00AEB64F /* CustomPhotoPicker.swift in Sources */,
 				54FCF9172A9DDEC7004CD2FE /* DependencyContainer.swift in Sources */,
