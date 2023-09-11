@@ -14,8 +14,15 @@ class BookInfoViewModel : ObservableObject
     @Published var ActionText : String = "Edit"
     @Published var currentBook : Book
     @Published var currentState : BookViewState
+    {
+        didSet
+        {
+            ActionText = mapStateToActionText(currentState)
+        }
+    }
     
     var imageData : Data? = nil
+    
     
     init(bookRepo: IBookRepository = DependencyContainer.instance.bookRepository, book:Book) {
         self.bookRepo = bookRepo
@@ -24,13 +31,13 @@ class BookInfoViewModel : ObservableObject
         if(bookRepo.GetBookById(bookId: book.id) == nil)
         {
             self.currentState = BookViewState.Create
-            self.ActionText = "Done"
         }
         else
         {
             self.currentState = BookViewState.View
-            self.ActionText = "Edit"
         }
+        
+        self.ActionText = mapStateToActionText(self.currentState)
     }
     
     func SetTempImageData(data : Data?)
@@ -69,17 +76,27 @@ class BookInfoViewModel : ObservableObject
             AddBook()
             DependencyContainer.instance.SetChangesFlag(hasChanged: true)
             currentState = BookViewState.View
-            ActionText = "Edit"
             
         case BookViewState.Edit:
             UpdateBook()
             DependencyContainer.instance.SetChangesFlag(hasChanged: true)
             currentState = BookViewState.View
-            ActionText = "Edit"
             
         case BookViewState.View:
             currentState = BookViewState.Edit
-            ActionText = "Done"
+        }
+    }
+    
+    private func mapStateToActionText(_ state : BookViewState) -> String
+    {
+        switch state
+        {
+        case .Create:
+            return "Done"
+        case .Edit:
+            return "Done"
+        case .View:
+            return "Edit"
         }
     }
     
@@ -90,15 +107,24 @@ class BookInfoViewModel : ObservableObject
         let filename = "\(currentBook.id.uuidString)_\(GetDatetimeString()).jpeg";
         let filepath = GetImagePath(filename: filename)
       
-        try? imageData!.write(to: filepath)
+        do
+        {
+            try imageData!.write(to: filepath)
+        }
+        catch
+        {
+            print("\(error)")
+            return
+        }
         
         let oldImageFile = currentBook.image
+        
         
         Task
         {
             DeleteOldPhoto(filename: oldImageFile)
         }
-        
+                    
         currentBook.image = filename
         
         imageData = nil
@@ -120,6 +146,7 @@ class BookInfoViewModel : ObservableObject
     
     private func DeleteOldPhoto(filename:String)
     {
+        if(filename.isEmpty) {return}
         let filepath = GetImagePath(filename: filename).path()
         
         do
@@ -127,7 +154,6 @@ class BookInfoViewModel : ObservableObject
             if(FileManager.default.fileExists(atPath: filepath))
             {
                 try FileManager.default.removeItem(atPath: filepath)
-                print("Deleted")
             }
         }
         catch

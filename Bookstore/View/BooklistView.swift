@@ -32,7 +32,7 @@ struct BooklistView: View {
                     {
                         NavigationLink
                         {
-                            BookInfoView(viewmodel: BookInfoViewModel(book: Book(title: "", author: "")))
+                            LazyNavigationView(BookInfoView(viewmodel: BookInfoViewModel(book: Book(title: "", author: ""))))
                         }label:
                         {
                             Image(systemName: "plus.circle.fill")
@@ -66,7 +66,7 @@ struct BookList : View
                         
                         NavigationLink
                         {
-                            BookInfoView(viewmodel:BookInfoViewModel(book:_book))
+                            LazyNavigationView(BookInfoView(viewmodel:BookInfoViewModel(book:_book)))
                         }label: {
                             BookRow(book: _book, isRefreshing: $refreshing)
                                 .swipeActions(edge: .trailing,

@@ -16,6 +16,7 @@
 		54C3E0532AA878A700AEB64F /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3E0522AA878A700AEB64F /* Notification.swift */; };
 		54C3E0552AA878FE00AEB64F /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3E0542AA878FE00AEB64F /* NotificationView.swift */; };
 		54C3E0582AAAF98000AEB64F /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3E0572AAAF98000AEB64F /* ImageHelper.swift */; };
+		54C3E05A2AAED21800AEB64F /* LazyNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3E0592AAED21800AEB64F /* LazyNavigationView.swift */; };
 		54FCF8D62A9C49F0004CD2FE /* BookstoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FCF8D52A9C49F0004CD2FE /* BookstoreApp.swift */; };
 		54FCF8D82A9C49F0004CD2FE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FCF8D72A9C49F0004CD2FE /* LoginView.swift */; };
 		54FCF8DA2A9C49F1004CD2FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54FCF8D92A9C49F1004CD2FE /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 		54C3E0522AA878A700AEB64F /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		54C3E0542AA878FE00AEB64F /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		54C3E0572AAAF98000AEB64F /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		54C3E0592AAED21800AEB64F /* LazyNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyNavigationView.swift; sourceTree = "<group>"; };
 		54FCF8D22A9C49F0004CD2FE /* Bookstore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookstore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54FCF8D52A9C49F0004CD2FE /* BookstoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookstoreApp.swift; sourceTree = "<group>"; };
 		54FCF8D72A9C49F0004CD2FE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				54FCF9202AA5B27D004CD2FE /* KeybaordExtension.swift */,
 				54FCF9232AA5BAC4004CD2FE /* KeyboardAdaptiveView.swift */,
 				54C3E04B2AA7256F00AEB64F /* KeyboardDismissEffect.swift */,
+				54C3E0592AAED21800AEB64F /* LazyNavigationView.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				54FCF90F2A9DD532004CD2FE /* BookInfoViewModel.swift in Sources */,
 				54FCF9012A9C5352004CD2FE /* LoginViewModel.swift in Sources */,
 				54FCF9082A9C83D3004CD2FE /* UserStateViewModel.swift in Sources */,
+				54C3E05A2AAED21800AEB64F /* LazyNavigationView.swift in Sources */,
 				54FCF9062A9C76CB004CD2FE /* HomeView.swift in Sources */,
 				54C3E0452AA5C6F300AEB64F /* BookDB.swift in Sources */,
 				54FCF9042A9C74A1004CD2FE /* BooklistView.swift in Sources */,
