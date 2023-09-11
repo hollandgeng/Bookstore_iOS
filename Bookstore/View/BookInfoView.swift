@@ -24,7 +24,7 @@ struct BookInfoView: View {
             {
                 BookInfo(book: $viewmodel.currentBook,
                          currentViewState: $viewmodel.currentState,
-                onPhotoChanged: {
+                         onPhotoChanged: {
                     imageData in
                     viewmodel.SetTempImageData(data: imageData)
                 })
@@ -69,12 +69,14 @@ struct BookInfo : View {
     @Binding var book : Book
     @Binding var currentViewState : BookViewState
     
+    @FocusState private var focusField : Field?
+    
     @State private var currentImage : UIImage?
     
     @State private var showImageAction : Bool = false
     
     @State private var customImagePicker : Bool = false
-
+    
     @State private var showCamera : Bool = false
     
     var onPhotoChanged : (Data?) -> Void = {data in return}
@@ -89,13 +91,10 @@ struct BookInfo : View {
             return
         }
         
-        //let _url = NSURL(string: book.image)?.path
         let filepath = GetImagePath(filename: book.image)
         
         if(FileManager.default.fileExists(atPath:filepath.path()))
         {
-            //let url = URL(string:book.image)
-            
             if let data = try? Data(contentsOf: filepath)
             {
                 currentImage = UIImage(data: data)
@@ -144,21 +143,55 @@ struct BookInfo : View {
             
             TextField("Title",text: $book.title)
                 .padding(4)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
                 .font(.system(size: 16))
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .focused($focusField, equals: .title)
                 .disabled(currentViewState == .View)
             TextField("Author",text: $book.author)
                 .padding(4)
                 .font(.system(size: 16))
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+                .focused($focusField, equals: .author)
                 .disabled(currentViewState == .View)
             TextField("Note", text:$book.note, axis:.vertical)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .font(.system(size:16))
-                .disabled(currentViewState == .View)
                 .padding(4)
+                .font(.system(size:16))
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .focused($focusField, equals: .note)
+                .disabled(currentViewState == .View)
                 .lineLimit(10, reservesSpace: true)
-            }.confirmationDialog("Action", isPresented: $showImageAction, actions: {
+            
+        }
+        .toolbar
+        {
+            ToolbarItemGroup(placement:.keyboard)
+            {
+                Button(action:FocusPrevious)
+                {
+                    Image(systemName: "chevron.up")
+                }.disabled(!CanFocusPrievious())
+                
+                Button(action:FocusNext)
+                {
+                    Image(systemName: "chevron.down")
+                }.disabled(!CanFocusNext())
+                
+                Spacer()
+            }
+            
+            
+            ToolbarItem(placement:.keyboard)
+            {
+                
+                
+                Button("Done")
+                {
+                    focusField = nil
+                }
+            }
+            
+        }
+        .confirmationDialog("Action", isPresented: $showImageAction, actions: {
             Button("Take A Photo", action: {
                 showCamera = true
             })
@@ -202,6 +235,48 @@ enum BookViewState
         case .Edit: return "Edit"
         case .View : return "View"
         }
+    }
+}
+
+extension BookInfo
+{
+    private enum Field : Int, CaseIterable
+    {
+        case title, author, note
+    }
+    
+    private func FocusPrevious()
+    {
+        focusField = focusField.map{
+            Field(rawValue: $0.rawValue - 1) ?? .note
+        }
+    }
+    
+    private func FocusNext()
+    {
+        focusField = focusField.map{
+            Field(rawValue: $0.rawValue + 1) ?? .title
+        }
+    }
+    
+    private func CanFocusPrievious() -> Bool
+    {
+        guard let currentField = focusField else
+        {
+            return false
+        }
+        
+        return currentField.rawValue > 0
+    }
+    
+    private func CanFocusNext() -> Bool
+    {
+        guard let currentField = focusField else
+        {
+            return false
+        }
+        
+        return currentField.rawValue < Field.allCases.count - 1
     }
 }
 
